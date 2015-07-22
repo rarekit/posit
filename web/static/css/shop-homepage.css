@@ -1,0 +1,191 @@
+/*!
+ * Start Bootstrap - Shop Homepage HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@font-face {
+    font-family: 'brandon-grotesque';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/brandon_med-webfont.eot');
+    src: url('../fonts/brandon_med-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/brandon_med-webfont.woff') format('woff'), url('../fonts/brandon_med-webfont.ttf') format('truetype'), url('../fonts/brandon_med-webfont.svg#fontawesome') format('svg');
+}
+@font-face {
+    font-family: 'colfax-web';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/Colfax-Medium.eot');
+    src: url('../fonts/Colfax-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Colfax-Medium.woff') format('woff'), url('../fonts/Colfax-Medium.ttf') format('truetype'), url('../fonts/Colfax-Medium.svg#fontawesome') format('svg');
+}
+
+
+
+body {
+
+    background-color: #333333;
+    padding-top: 80px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+
+.product .thumbnail .caption {
+    height: auto;
+}
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+
+.navbar-yellow {
+    background-color: #f6dc2c;
+    padding: 15px 0 15px;
+    border:none !important;
+}
+
+.thumbnail {
+    border-radius: 0;
+    border: 0;
+}
+.thumbnail .caption.green {
+    background-color: #C6DD2A;
+    color: #555555
+}
+.thumbnail .caption.blue {
+    background-color: #55C7F0;
+}
+.thumbnail .caption.pink {
+    background-color: #F64FC2;
+}
+
+.thumbnail .caption h4 a {
+    font-family:"brandon-grotesque",sans-serif;
+    color: #ffffff;
+    font-size: 1.4em;
+    font-style: italic;
+    text-transform: lowercase;
+    padding: 5px 0px;
+}
+.thumbnail .caption p{
+    font-size: 1.4em;
+    overflow: hidden; 
+    font-family: "colfax-web";
+    margin:0;
+    color: #555;
+}
+
+footer {
+    color: #555555;
+    background: white;
+    padding: 10px 20px 10px;
+}
+footer p {
+    padding: 0px;
+    margin: 0;
+    font-style: italic;
+}
+
+.navbar-yellow .navbar-nav>li>a {
+    font-family: "colfax-web";
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2e2d2d !important;
+    text-transform: uppercase;
+}
+.navbar-yellow .navbar-nav>li:hover,
+.navbar-yellow .navbar-nav>li.active {
+    background: url('../images/menu-item-bg.png') 55% 85% no-repeat;
+}
+.navbar-brand {
+    padding: 0px 20px 0px 20px;
+}
+
+.navbar-yellow .navbar-nav>li {padding-left: 15px; padding-right: 15px;}  
+
+body.product {
+    background: #fdfbe4;
+}
+.product .container.page {
+    background: #fff;
+}
+
+.pre-footer {
+    padding: 10px 0px;
+}
+
+.pre-footer .brand {
+    display:block;
+    float: left;
+    width: 100%;
+    text-align: right;
+    color: orange;
+    font-style: italic;
+}
+
+.left-nav {
+
+}
+.left-nav ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+.left-nav ul li {
+    list-style: none;
+}
+.left-nav h3{
+    color: #646464;
+    text-transform: uppercase;
+    margin: 10px 0px 3px 0px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.left-nav ul li a {
+    background-image: none;
+    zoom: 1;
+}
+
+.page .banner {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.banner .img-responsive {
+    width: 100%;
+}

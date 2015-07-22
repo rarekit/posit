@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="product_manager.class">Aseagle\Bundle\EcommerceBundle\Manager\ProductManager</parameter>
+        <parameter key="brand_manager.class">Aseagle\Bundle\EcommerceBundle\Manager\BrandManager</parameter>
+        <parameter key="order_manager.class">Aseagle\Bundle\EcommerceBundle\Manager\OrderManager</parameter>
+        <parameter key="product_image_manager.class">Aseagle\Bundle\EcommerceBundle\Manager\ImageManager</parameter>
+        <parameter key="product_review_manager.class">Aseagle\Bundle\EcommerceBundle\Manager\ProductReviewManager</parameter>
+    </parameters>
+    
+    <services>
+        <service id="product_manager" class="%product_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />            
+        </service>        
+        <service id="brand_manager" class="%brand_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />            
+        </service>
+        <service id="order_manager" class="%order_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />            
+        </service>
+        <service id="product_image_manager" class="%product_image_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />            
+        </service>
+        <service id="product_review_manager" class="%product_review_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />            
+        </service>
+    </services>  
+</container>

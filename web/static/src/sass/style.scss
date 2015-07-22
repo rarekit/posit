@@ -1,0 +1,60 @@
+@import 'reset';
+@import 'mixin';
+
+@font-face {
+    font-family: 'brandon-grotesque';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/brandon_med-webfont.eot');
+    src: url('../fonts/brandon_med-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/brandon_med-webfont.woff') format('woff'), url('../fonts/brandon_med-webfont.ttf') format('truetype'), url('../fonts/brandon_med-webfont.svg#fontawesome') format('svg');
+}
+@font-face {
+    font-family: 'colfax-web';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/Colfax-Medium.eot');
+    src: url('../fonts/Colfax-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Colfax-Medium.woff') format('woff'), url('../fonts/Colfax-Medium.ttf') format('truetype'), url('../fonts/Colfax-Medium.svg#fontawesome') format('svg');
+}
+
+.box { @include border-radius(10px); }
+
+body {
+    background-color: #333333;
+    padding-top: 80px; 
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+
+
+
+
+.thumbnail {
+    padding: 0;
+
+    .caption-full {
+        padding: 9px;
+        color: #333;
+    }
+    .caption.green {
+        background-color: #C6DD2A;
+        color: #555555
+    }
+
+}

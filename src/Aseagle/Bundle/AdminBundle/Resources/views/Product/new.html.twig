@@ -1,0 +1,157 @@
+{% extends 'AseagleAdminBundle::layout.html.twig' %} 
+{% block javascript %} 
+{{ parent() }} 
+{{ elfinder_tinymce_init4('default', {'width':'1024', 'height': '450', 'title':'Files Manager'|trans} ) }} 
+{{tinymce_init() }} 
+<script>
+jQuery(document).ready(function() { 
+    Ecommerce.init();
+});
+</script>
+{% endblock %} 
+
+{% block content %}
+<!-- BEGIN FORM-->
+{% form_theme form 'AseagleAdminBundle:Form:fields.html.twig' %}
+<form action="" id="form_validated_2" method="POST" class="horizontal-form" novalidate="novalidate">
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-docs font-green-sharp"></i> <span class="caption-subject font-green-sharp bold uppercase">{{ 'Product'|trans }}</span>
+            </div>
+            <div class="actions">
+                <a href="{{ path('admin_product') }}" class="btn btn-circle btn-default"> <i class="fa fa-angle-left"></i> <span class="hidden-480"> {{ 'Back'|trans }}</span></a>
+                <button type="submit" class="btn btn-circle green-haze">
+                    <i class="fa fa-check"></i> {{ 'Save'|trans }}
+                </button>
+                <button type="submit" name="saveedit" class="btn btn-circle green-haze">
+                    <i class="fa fa-check-circle"></i> {{ 'Save & Continute Edit'|trans }}
+                </button>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="alert alert-danger display-hide">
+				<button class="close" data-close="alert"></button>
+				{{ 'You have some form errors. Please check below.'|trans }}
+			</div>		
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab_general" data-toggle="tab"> {{ 'General'|trans }} </a></li>
+                    <li><a href="#tab_meta" data-toggle="tab"> {{ 'Meta'|trans }} </a></li>
+                    <li><a href="#tab_images" data-toggle="tab"> {{ 'Images'|trans }} </a></li>
+                    <li><a href="#tab_reviews" data-toggle="tab"> {{ 'Reviews'|trans }} </a></li>
+                </ul>
+                <div class="tab-content no-space">
+                    <div class="tab-pane active" id="tab_general">
+                        <div class="form-body">
+                        {{ form_row(form.name) }} 
+                        {{ form_row(form.slug) }} 
+                        {{ form_row(form.sku) }} 
+                        {{ form_row(form.brand) }} 
+                        {{ form_row(form.categories) }} 
+                        {{ form_row(form.intro) }} 
+                        {{ form_row(form.description) }} 
+                        {{ form_row(form.supplement) }}
+                        {{ form_row(form.price) }} 
+                        {{ form_row(form.quantity) }} 
+                        {{ form_row(form.showHomepage) }} 
+                        {{ form_row(form.enabled) }} 
+                        {{ form_row(form._token) }}</div>
+                    </div>
+                    <div class="tab-pane" id="tab_meta">
+                        <div class="form-body">{{ form_row(form.metaTitle) }} {{ form_row(form.metaContent) }} {{ form_row(form.metaKeywords) }}</div>
+                    </div>
+                    <div class="tab-pane" id="tab_images">
+                        <div id="tab_images_uploader_container" class="text-align-reverse margin-bottom-10" data-url="{{ path('admin_product_upload') }}">
+                            <a id="tab_images_uploader_pickfiles" href="javascript:;" class="btn yellow"> <i class="fa fa-plus"></i> {{ 'Select Files'|trans }}
+                            </a> <a id="tab_images_uploader_uploadfiles" href="javascript:;" class="btn green"> <i class="fa fa-share"></i> {{ 'Upload Files'|trans }}
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div id="tab_images_uploader_filelist" class="col-md-12 col-sm-12"></div>
+                        </div>
+                        <table class="table table-bordered table-hover" data-product-image
+                            data-prototype="{% filter escape %}{% include 'AseagleAdminBundle:Product/Form:image-prototype.html.twig' with {'form': form.images.vars.prototype} %}{% endfilter %}">
+                            <thead>
+                                <tr role="row" class="heading">
+                                    <th width="8%">{{ 'Image'|trans }}</th>
+                                    <th width="35%">{{ 'Image Name'|trans }}</th>
+                                    <th width="10%">{{ 'Ordering'|trans }}</th>
+                                    <th width="5%">{{ 'Thumbnail'|trans }}</th>
+                                    <th width="10%"></th>
+                                </tr>
+                            </thead>
+                            <tbody>{% for image in form.images %} {% include 'AseagleAdminBundle:Product/Form:image-prototype.html.twig' with {form: image} %} {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="tab_reviews">
+                        <div class="table-container">
+                            <div class="table-actions-wrapper">
+                                <span> </span> <select class="table-group-action-input form-control input-inline input-small input-sm">
+                                    <option value="">{{ 'Select...'|trans }}</option>
+                                    <option value="publish">{{ 'Publish'|trans }}</option>
+                                    <option value="unpublished">{{ 'Un-publish'|trans }}</option>
+                                    <option value="delete">{{ 'Delete'|trans }}</option>
+                                </select>
+                                <button class="btn btn-sm yellow table-group-action-submit">
+                                    <i class="fa fa-check"></i> {{ 'Submit'|trans }}
+                                </button>
+                            </div>
+                            <table class="table table-striped table-bordered table-hover" id="datatable_ajax" data-length="50" data-url="{% if form.vars.data.id is defined %}{{ path('admin_product_review', {pid: form.vars.data.id}) }}{%else%}{{ path('admin_product_review', {pid: 4}) }}{% endif %}">
+                                <thead>
+                                    <tr role="row" class="heading">
+                                        <th width="1%"><input type="checkbox" class="group-checkable"></th>
+                                        <th width="10%">{{ 'Created'|trans }}</th>
+                                        <th width="10%">{{ 'Customer'|trans }}</th>
+                                        <th width="30%">{{ 'Content'|trans }}</th>
+                                        <th width="10%">{{ 'Status'|trans }}</th>
+                                        <th width="10%">{{ 'Actions'|trans }}</th>
+                                    </tr>
+                                    <tr role="row" class="filter">
+                                        <td></td>
+                                        <td>
+                                            <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                                {{ form_widget(formReview.created_from) }} 
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-sm default" type="button">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
+                                                {{ form_widget(formReview.created_to) }}
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-sm default" type="button">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>{{ form_widget(formReview.user) }}</td>
+                                        <td>{{ form_widget(formReview.message) }}</td>
+                                        <td>{{ form_widget(formReview.enabled) }}</td>
+                                        <td>
+                                            <div class="margin-bottom-5">
+                                                <button class="btn btn-sm yellow filter-submit margin-bottom">
+                                                    <i class="fa fa-search"></i> {{ 'Search'|trans }}
+                                                </button>
+                                            </div>
+                                            <button class="btn btn-sm red filter-cancel">
+                                                <i class="fa fa-times"></i> {{ 'Reset'|trans }}
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

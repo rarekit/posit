@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="Aseagle\Bundle\EcommerceBundle\Entity\Brand" table="ecommerce_brands" repository-class="Aseagle\Bundle\EcommerceBundle\Repository\BrandRepository">
+		<id name="id" type="integer" column="id">
+			<generator strategy="IDENTITY" />
+		</id>		
+		<field name="name" type="string" column="name" length="255" nullable="false" />
+        <field name="slug" type="string" column="slug" length="255" nullable="false" />
+        <field name="intro" type="text" column="intro" nullable="true" />
+        <field name="picture" type="string" column="picture" length="255" nullable="true" />
+		<field name="created" type="datetime" column="created" nullable="true" />
+		<field name="enabled" type="boolean" column="enabled" nullable="true" />
+		<field name="type" type="integer" column="type" nullable="true">
+			<options>
+				<comment>1: Thumbnail, 2: Small, 3: Base </comment>
+				<default>1</default>
+			</options>
+		</field>	
+		<many-to-many field="categories" target-entity="Aseagle\Bundle\ContentBundle\Entity\Category">
+            <cascade>
+                <cascade-persist />
+                <cascade-merge />
+                <cascade-refresh />
+            </cascade>
+            <join-table name="ecommerce_brand_category">
+                <join-columns>
+                    <join-column name="brand_id" referenced-column-name="id" nullable="false" unique="false"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="category_id" referenced-column-name="id" column-definition="INT NULL" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>	
+		<lifecycle-callbacks>
+			<lifecycle-callback type="prePersist" method="updatedTimestamp" />
+			<lifecycle-callback type="preUpdate" method="updatedTimestamp" />
+		</lifecycle-callbacks>	
+	</entity>
+</doctrine-mapping>

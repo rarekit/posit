@@ -1,0 +1,68 @@
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+
+        home_thumbnail:
+            quality: 100
+            filters:
+                thumbnail: { size: [290, 210], mode: outbound }  
+
+        home_slide_thumbnail:
+            quality: 100
+            filters:
+                thumbnail: { size: [290, 210] }  
+
+        avatar:
+            quality: 90
+            filters:
+                thumbnail: { size: [200, 200], mode: outbound }   
+                
+        avatar_small:
+            quality: 90
+            filters:
+                thumbnail: { size: [29, 29], mode: outbound }
+                
+        article_thumb:
+            quality: 100
+            filters:
+                thumbnail: { size: [135, 100], mode: outbound }
+                
+        product_slide:
+            quality: 100
+            filters:
+                thumbnail: { size: [160, 100], mode: outbound }
+                
+        product_thumb:
+            quality: 100
+            filters:
+                thumbnail: { size: [250, 140], mode: outbound }
+                
+        product_small:
+            quality: 100
+            filters:
+                thumbnail: { size: [318, 200] }
+                
+                
+        category_large:
+            quality: 100
+            filters:
+                thumbnail: { size: [756, 300] }
+                
+        home_banner:
+            quality: 100
+            filters:
+                thumbnail: { size: [330, 300] }
+                
+        home_banner_top:
+            quality: 100
+            filters:
+                thumbnail: { size: [490, 300] }
+                
+        brand_thumb:
+            quality: 100
+            filters:
+                thumbnail: { size: [117, 50] }

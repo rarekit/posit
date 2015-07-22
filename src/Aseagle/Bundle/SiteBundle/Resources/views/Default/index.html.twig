@@ -1,0 +1,30 @@
+{% extends "AseagleSiteBundle::layout.html.twig" %}
+
+{% block slide %} {{render(controller('AseagleSiteBundle:Block:slide'))}} {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                {% for category in categories %}
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">                       
+                            {% if category.picture and category.picture != ''%}
+                                <img src="{{("/uploads/" ~ category.picture)|imagine_filter('home_thumbnail')}}" alt="">
+                            {% else %}
+                                <img src="{{asset("static/images/image01.jpg")|imagine_filter('home_thumbnail')}}" alt="">
+                            {% endif %}
+
+
+                            <div class="caption {{random(['green', 'blue', 'pink'])}}">
+                                <h4><a href="#">{{category.title}}</a>
+                                </h4>
+                                <p>{{category.description[:50]|striptags|raw}}...</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% block metadata %}
+            <meta name="description" content="">
+            <meta name="author" content="">
+            <title>An Viet In</title>
+        {% endblock %}
+
+        {% block stylesheet %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{{asset("static/css/bootstrap.min.css")}}" rel="stylesheet">
+            <!-- Custom CSS -->
+            <link href="{{asset("static/css/shop-homepage.css")}}" rel="stylesheet">
+            <script type="text/javascript">var switchTo5x=true;</script>
+            <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+            <script type="text/javascript">stLight.options({publisher: "ed094677-233e-4444-b2d2-01db35f48c9b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+                <![endif]-->
+            {% endblock %}
+    </head>
+
+    <body class="home">
+        {% block nav %}
+            {{render(controller('AseagleSiteBundle:Block:nav'))}}
+        {% endblock %}
+        {% block slide%}{%endblock slide%}
+        <div class="container">
+            <div class="row carousel-holder"></div>
+            {% block body%} {%endblock%}
+
+        </div>
+        <!-- /.container -->
+        <div class="container pre-footer">
+            <div class="row">
+                <div class="col-lg-6">
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="pull-right">
+                        <span class='st_facebook_large' displayText='Facebook'></span>
+                        <span class='st_twitter_large' displayText='Tweet'></span>
+                        <span class='st_googleplus_large' displayText='Google +'></span>
+                        <span class='st_pinterest_large' displayText='Pinterest'></span>
+                    </div>
+                    <p class="brand">Post-it® Brand are trademarks of AVI</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>Copyright &copy; An Viet 2015</p>
+                    </div>
+                    <div class="col-lg-6">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {% block javascript %}
+            <script src="{{asset("static/js/jquery.js")}}"></script>
+            <script src="{{asset("static/js/bootstrap.min.js")}}"></script>
+        {% endblock %}
+
+    </body>
+
+</html>

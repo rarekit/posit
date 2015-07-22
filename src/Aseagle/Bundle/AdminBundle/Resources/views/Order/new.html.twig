@@ -1,0 +1,64 @@
+{% extends 'AseagleAdminBundle::layout.html.twig' %} 
+
+{% block content %}
+<!-- BEGIN FORM-->
+{% form_theme form 'AseagleAdminBundle:Form:fields.html.twig' %}
+<form action="" id="form_validated_2" method="POST" class="horizontal-form" novalidate="novalidate">
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="icon-docs font-green-sharp"></i> <span class="caption-subject font-green-sharp bold uppercase">{{ 'Orders'|trans }}</span>
+            </div>
+            <div class="actions">                
+                <a href="{{ path('admin_category') }}" class="btn btn-circle btn-default"> <i class="fa fa-angle-left"></i> <span class="hidden-480"> {{ 'Back'|trans }}</span></a>
+                <button type="submit" class="btn btn-circle green-haze"><i class="fa fa-check"></i> {{ 'Save'|trans }}</button>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <h3 class="form-section">{{ 'Product Orders'|trans }}</h3>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr class="heading">
+                            <th width="1%">{{ '#'|trans }}</th>
+                            <th width="10%">{{ 'Image'|trans }}</th>
+                            <th width="30%">{{ 'Product Name'|trans }}</th>
+                            <th width="10%">{{ 'Price'|trans }}</th>
+                            <th width="10%">{{ 'Total Price'|trans }}</th>
+                            <th width="10%">{{ 'Quantity'|trans }}</th>
+                            <th width="10%">{{ 'Actions'|trans }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% set sum = 0 %}
+                    {% for item in form.orderItems %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td><img class="img-responsive" src="{{ asset('/uploads/products/' ~ item.product.vars.data.thumbnail)|imagine_filter('product_thumb') }}" class="" /></td>
+                            <td>{{ item.product.vars.data.name }}</td>
+                            <td>{{ item.product.vars.data.price|number_format }}</td>
+                            <td>{{ (item.product.vars.data.price  * item.quantity.vars.data)|number_format }}</td>
+                            <td>{{ form_widget(item.quantity) }}<div class="hide">{{ form_widget(item.product) }}</div></td>
+                            <td><button class="btn btn-xs btn-danger" data-orderitem-delete title="{{ 'Delete'|trans }}"><i class="fa fa-trash-o"></i> {{ 'Delete'|trans }}</button></td>
+                            {% set sum = sum + (item.product.vars.data.price  * item.quantity.vars.data) %}
+                        </tr>
+                    {% endfor %}  
+                    <tr>
+                        <td colspan="4" style="text-align: right">{{ 'Total Price'|trans }}:</td>
+                        <td colspan="3">{{ sum|number_format }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h3 class="form-section">{{ 'Customer Information'|trans }}</h3>
+                {{ form_widget(form) }}                  
+            </div>
+            <div class="form-actions right">
+                <button type="button" class="btn default">{{ 'Cancel'|trans }}</button>
+                <button type="submit" class="btn blue">
+                    <i class="fa fa-check"></i> {{ 'Save'|trans }}
+                </button>
+            </div>
+        </div>
+    </div>
+ </form>
+{% endblock %}

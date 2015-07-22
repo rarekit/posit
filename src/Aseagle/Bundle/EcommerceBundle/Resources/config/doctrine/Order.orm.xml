@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="Aseagle\Bundle\EcommerceBundle\Entity\Order" table="ecommerce_orders" repository-class="Aseagle\Bundle\EcommerceBundle\Repository\OrderRepository">
+		<id name="id" type="integer" column="id">
+			<generator strategy="IDENTITY" />
+		</id>
+		<indexes>
+			<index name="fk_order_user_idx" columns="user_id" />
+		</indexes>
+	   
+		<field name="fullname" type="string" column="fullname" length="128" nullable="false"/>
+        <field name="email" type="string" column="email" length="128" nullable="false"/>	
+        <field name="gender" type="boolean" column="gender" nullable="true"/>
+        <field name="phone" type="string" column="phone" length="45" nullable="true"/>
+        <field name="address" type="string" column="address" length="45" nullable="true" />
+        <field name="total" type="integer" column="total" nullable="false" />
+		<field name="status" type="integer" column="status" nullable="true">
+		  <options>
+		      <comment>0: Cancel, 2: Pending, 1: Completed</comment>
+		      <default>2</default>
+		  </options>
+		</field>
+		<field name="updated" type="datetime" column="updated" nullable="true" />
+		<field name="created" type="datetime" column="created" nullable="true" />
+		<lifecycle-callbacks>
+			<lifecycle-callback type="prePersist" method="updatedTimestamp" />
+			<lifecycle-callback type="preUpdate" method="updatedTimestamp" />
+		</lifecycle-callbacks>
+		<one-to-many field="orderItems" target-entity="OrderItem" mapped-by="order">
+            <cascade>
+                <cascade-persist/>
+                <cascade-remove/>
+            </cascade>          
+        </one-to-many>
+		<many-to-one field="user" target-entity="Aseagle\Bundle\UserBundle\Entity\User">
+            <join-columns>
+                <join-column name="user_id" referenced-column-name="id" />
+            </join-columns>
+        </many-to-one>
+	</entity>
+</doctrine-mapping>

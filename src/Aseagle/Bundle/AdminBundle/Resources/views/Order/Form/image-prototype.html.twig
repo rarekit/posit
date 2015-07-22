@@ -1,0 +1,11 @@
+<tr>
+    <td>{{ form_widget(form.path) }}
+    <a href="{{ asset('/uploads/products/' ~ form.path.vars.data) }}" class="fancybox-button" data-image data-rel="fancybox-button"> 
+        <img class="img-responsive" src="{{ asset('/uploads/products/' ~ form.path.vars.data) }}" alt="">
+    </a>
+    </td>
+    <td>{{ form_widget(form.name) }}</td>
+    <td>{{ form_widget(form.ordering) }}</td>  
+    <td>{{ form_widget(form.thumb) }}</td> 
+    <td><a href="javascript:;" data-href="{% if entity is defined %}{{path('admin_product_image_delete', {id:entity.id})}}{% endif %}" class="btn default btn-sm"> <i class="fa fa-times"></i> {{ 'Delete'|trans }}</a></td>
+</tr>

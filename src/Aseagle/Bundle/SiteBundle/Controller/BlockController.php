@@ -17,6 +17,10 @@ class BlockController extends Controller
         return $this->render('AseagleSiteBundle:Block:nav.html.twig');
     }
 
+    /**
+     * slide action
+     * show slide on homepage
+     */
     public function slideAction()
     {
         $bannerRepo = $this->get('banner_manager')->getRepository();
@@ -25,5 +29,14 @@ class BlockController extends Controller
         return $this->render('AseagleSiteBundle:Block:slide.html.twig', array(
             'banners' => $banners
         ));
+    }
+
+
+    /**
+     * support action
+     */
+    public function supportAction()
+    {
+        return $this->render('AseagleSiteBundle:Block:support.html.twig');
     }
 }

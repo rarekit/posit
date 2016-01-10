@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>An Viet In</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/shop-homepage.css" rel="stylesheet">
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script>
+            $(document).ready(function(){
+                var itemHoverImg;
+                $('.cboxElement a').hover(function(){
+                    itemHoverImg = $(this);
+                    var itemShow = itemHoverImg.data('order');
+                    $('.productImage .thumbnail').css({
+                        'z-index': 1,
+                        opacity: 0
+                    });
+                    $('.productImage .thumbnail').eq(itemShow).css({
+                        'z-index': 2,
+                        opacity: 1
+                    });
+                },function() {
+
+                });
+                $("[rel^='lightbox']").prettyPhoto({
+                    social_tools: '',
+                    default_width: 1000
+                });
+            });
+        </script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+
+    </head>
+
+    <body class="product">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-yellow navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png" /></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                </form>
+                </div>
+                <!-- /.navbar-collapse -->
+
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- Page Content -->
+        <div class="container page">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <nav class="left-nav">
+                        <h3 class="lead">Catalog</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge">14</span>
+                                <a href="#">Category 1</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge">14</span>
+                                <a href="#">Category 1</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge">14</span>
+                                <a href="#">Category 1</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge">14</span>
+                                <a href="#">Category 1</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge">14</span>
+                                <a href="#">Category 1</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge">14</span>
+                                <a href="#">Category 1</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-9 col-center">
+                    <h1 class="pageTitle">Post-it® Super Sticky Notes, 3 in x 3 in, Marrakesh Collection, 5 Pads/Pack</h1>
+                    <div class="altIds texttwo">
+                        &nbsp;<strong>Catalog Number:</strong>&nbsp;
+                        <span>654-5SSAN</span>&nbsp;&nbsp;
+                        <strong>UPC:</strong>&nbsp;
+                        <span>00021200531224</span>
+                    </div>
+                    <div class="show-detail">
+                        <div class="detail-item clearfix">
+                            <div class="col-xs-5">
+                                <div id="mainImageBlock">
+                                    <div class="productImage">
+                                        <a class="thumbnail" rel="lightbox[group]" href="images/654-5SSAN_CRIP_2015_01_RGB_D.jpg"><img class="group1 mainImageBlockImg" src="images/654-5SSAN_CRIP_2015_01_RGB_D.jpg" /></a>
+                                        <a class="thumbnail" rel="lightbox[group]" href="images/MARRAKESH_COLORS_02_RGB_D.jpg"><img class="group1 mainImageBlockImg" src="images/MARRAKESH_COLORS_02_RGB_D.jpg" /></a>
+                                        <a class="thumbnail" rel="lightbox[group]" href="images/MARRAKESH_APP_03_RGB_D.jpg"><img class="group1 mainImageBlockImg" src="images/MARRAKESH_APP_03_RGB_D.jpg" /></a>
+                                        <a class="thumbnail" rel="lightbox[group]" href="images/MARRAKESH_APP_01_RGB_D.jpg"><img class="group1 mainImageBlockImg" src="images/MARRAKESH_APP_01_RGB_D.jpg" /></a>
+                                    </div>
+                                </div>
+                                <div id="mediaBlock">
+                                    <div class="cboxElement">
+                                        <a data-order="0"><img class="mediaBlockImg" src="images/654-5SSAN_CRIP_2015_01_RGB_A.jpg"></a>
+                                    </div>
+                                    <div class="cboxElement">
+                                        <a data-order="1"><img class="mediaBlockImg" src="images/MARRAKESH_COLORS_02_RGB_A.jpg"></a>
+                                    </div>
+                                    <div class="cboxElement">
+                                        <a data-order="2"><img class="mediaBlockImg" src="images/MARRAKESH_APP_03_RGB_A.jpg"></a>
+                                    </div>
+                                    <div class="cboxElement">
+                                        <a data-order="3"><img class="mediaBlockImg" src="images/MARRAKESH_APP_01_RGB_A.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="textone" id="prodInfoContainer">
+                                    <div id="mainDescripContainer">
+                                        <ul>
+                                            <li>3 in x 3 in, Marrakesh Collection</li>
+                                            <li>Holds stronger and longer, yet removes cleanly</li>
+                                            <li>Perfect size for leaving notes of encouragement</li>
+                                            <li>Colorful Post-it® Super Sticky Notes inspired by colorful cities</li>
+                                            <li>These colors convey the genuine energy and movement found in this desert jewel</li>
+                                            <li>5 Pads/Pack</li>
+                                            <li>All Post-it® Notes are recyclable.</li>
+                                            <li>The paper in Post-it® Notes is sourced from certified, renewable and responsibly managed forests.</li>
+                                            <li>Easily capture, organize and share your Post-it® Super Sticky Notes with the Post-it® Plus App</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                        
+                        <div class="container-fluid">
+                            <script type="text/javascript">
+                                $('#myTabs a').click(function (e) {
+                                    e.preventDefault();
+                                    $(this).tab('show');
+                                    return false;
+                                });
+                            </script>
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs myTabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Overview</a></li>
+                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Videos</a></li>
+                                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Related Products</a></li>
+                                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Reviews</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                    <h2>Overview</h2>
+                                    <div itemprop="description" class="descriptionBlock">Post-it® Super Sticky Notes in 3 in x 3 in size hold stronger and longer, yet remove cleanly. They are perfect for leaving notes of encouragement. A World of Color Marrakesh Collection conveys the genuine energy and movement found in this desert jewel. 5 Pads/Pack.</div>
+                                    <div id="attributeList">
+                                        <h4>Specifications</h4>
+                                        <table>
+                                        <tbody><tr class="oddRow">
+                                        <td class="label">&nbsp;Color‎</td><td>&nbsp;Marrakesh Collection‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Package Configurations‎</td><td>&nbsp;5 Pads/Pack‎
+                                        </td>
+                                        </tr>
+                                        <tr class="oddRow">
+                                        <td class="label">&nbsp;Package Contents‎</td><td>&nbsp;90 Sheets/Pad‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Size‎</td><td>&nbsp;3 in x 3 in‎
+                                        </td>
+                                        </tr>
+                                        </tbody></table>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="profile">
+                                    <h2>Videos</h2>
+                                    <div itemprop="description" class="descriptionBlock">Post-it® Super Sticky Notes in 3 in x 3 in size hold stronger and longer, yet remove cleanly. They are perfect for leaving notes of encouragement. A World of Color Marrakesh Collection conveys the genuine energy and movement found in this desert jewel. 5 Pads/Pack.</div>
+                                    <div id="attributeList">
+                                        <h4>Specifications</h4>
+                                        <table>
+                                        <tbody><tr class="oddRow">
+                                        <td class="label">&nbsp;Color‎</td><td>&nbsp;Marrakesh Collection‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Package Configurations‎</td><td>&nbsp;5 Pads/Pack‎
+                                        </td>
+                                        </tr>
+                                        <tr class="oddRow">
+                                        <td class="label">&nbsp;Package Contents‎</td><td>&nbsp;90 Sheets/Pad‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Size‎</td><td>&nbsp;3 in x 3 in‎
+                                        </td>
+                                        </tr>
+                                        </tbody></table>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="messages">
+                                    <h2>Related Products</h2>
+                                    <div itemprop="description" class="descriptionBlock">Post-it® Super Sticky Notes in 3 in x 3 in size hold stronger and longer, yet remove cleanly. They are perfect for leaving notes of encouragement. A World of Color Marrakesh Collection conveys the genuine energy and movement found in this desert jewel. 5 Pads/Pack.</div>
+                                    <div id="attributeList">
+                                        <h4>Specifications</h4>
+                                        <table>
+                                        <tbody><tr class="oddRow">
+                                        <td class="label">&nbsp;Color‎</td><td>&nbsp;Marrakesh Collection‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Package Configurations‎</td><td>&nbsp;5 Pads/Pack‎
+                                        </td>
+                                        </tr>
+                                        <tr class="oddRow">
+                                        <td class="label">&nbsp;Package Contents‎</td><td>&nbsp;90 Sheets/Pad‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Size‎</td><td>&nbsp;3 in x 3 in‎
+                                        </td>
+                                        </tr>
+                                        </tbody></table>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="settings">
+                                    <h2>Reviews</h2>
+                                    <div itemprop="description" class="descriptionBlock">Post-it® Super Sticky Notes in 3 in x 3 in size hold stronger and longer, yet remove cleanly. They are perfect for leaving notes of encouragement. A World of Color Marrakesh Collection conveys the genuine energy and movement found in this desert jewel. 5 Pads/Pack.</div>
+                                    <div id="attributeList">
+                                        <h4>Specifications</h4>
+                                        <table>
+                                        <tbody><tr class="oddRow">
+                                        <td class="label">&nbsp;Color‎</td><td>&nbsp;Marrakesh Collection‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Package Configurations‎</td><td>&nbsp;5 Pads/Pack‎
+                                        </td>
+                                        </tr>
+                                        <tr class="oddRow">
+                                        <td class="label">&nbsp;Package Contents‎</td><td>&nbsp;90 Sheets/Pad‎
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td class="label">&nbsp;Size‎</td><td>&nbsp;3 in x 3 in‎
+                                        </td>
+                                        </tr>
+                                        </tbody></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+        <div class="container pre-footer">
+            <div class="">
+                <div class="col-lg-6">
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="pull-right">
+                        <span class='st_facebook_large' displayText='Facebook'></span>
+                        <span class='st_twitter_large' displayText='Tweet'></span>
+                        <span class='st_googleplus_large' displayText='Google +'></span>
+                        <span class='st_pinterest_large' displayText='Pinterest'></span>
+                    </div>
+                    <p class="brand">Post-it® Brand are trademarks of AVI</p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>Copyright &copy; An Viet 2015</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- /.container -->
+
+    </body>
+
+</html>

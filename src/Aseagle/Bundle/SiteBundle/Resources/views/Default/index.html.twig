@@ -19,7 +19,7 @@
                             <div class="caption {{random(['green', 'blue', 'pink'])}}">
                                 <h4><a href="#">{{category.title}}</a>
                                 </h4>
-                                <p>{{category.description[:50]|striptags|raw}}...</p>
+                                <p>{{category.description|striptags[:50]|raw}}...</p>
                             </div>
                         </div>
                     </div>

@@ -28,7 +28,7 @@
             {% endblock %}
     </head>
 
-    <body class="home">
+    <body {% block bodycls%}class="home"{%endblock%}>
         {% block nav %}
             {{render(controller('AseagleSiteBundle:Block:nav'))}}
         {% endblock %}

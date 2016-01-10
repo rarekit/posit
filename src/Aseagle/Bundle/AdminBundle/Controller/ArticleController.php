@@ -10,13 +10,7 @@
  */
 namespace Aseagle\Bundle\AdminBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
 use Aseagle\Bundle\CoreBundle\Helper\Html;
-use Doctrine\ORM\EntityRepository;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Finder\Exception\AccessDeniedException;
-use Aseagle\Bundle\ContentBundle\Entity\Content;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * ArticleController

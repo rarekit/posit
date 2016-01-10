@@ -68,5 +68,10 @@ class ProductManager implements ObjectManagerInterface {
             $this->entityManager->flush();
         }
     }
+
+    public function getProducts($conditions, $orders=array(), $offset=0, $limit=0)
+    {
+        return $this->getRepository()->findBy($conditions, $orders, $offset, $limit);
+    }
 }
 

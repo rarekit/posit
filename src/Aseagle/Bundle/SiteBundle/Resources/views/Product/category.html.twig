@@ -1,0 +1,33 @@
+<nav class="left-nav">
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-list">
+                    </span>{{'Catalog'|trans}}</a>
+            </h4>
+        </div>
+        <div class="panel-collapse" id="menu">
+            <ul class="list-group panel">
+                {% if categories[0] is defined %}
+                    {% for category in categories[0] %}
+                        <li class="list-group-item">
+                            <a href="#" data-toggle="collapse" data-target="#sm{{category.id}}" data-parent="#menu">{{category.title}}</a>
+                            {% if categories[category.id] is defined %}
+                                <ul class="list-group collapse" id="sm{{category.id}}">
+                                    {% for subcat in categories[category.id] %}
+                                        <li class="list-group-item">
+                                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                            <a href="#">{{subcat.title}}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+</nav>

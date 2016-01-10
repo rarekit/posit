@@ -1,3 +1,8 @@
 aseagle_site_homepage:
     path:     /
     defaults: { _controller: AseagleSiteBundle:Default:index }
+
+aseagle_site_product:
+    resource: '@AseagleSiteBundle/Resources/config/routing/product.yml'
+    prefix: /products
+

@@ -42,7 +42,7 @@ class LoadAclData implements FixtureInterface, ContainerAwareInterface
             array ('name' => 'Product Category Manager', 'class' => 'Aseagle\Bundle\AdminBundle\Controller\ProductCategoryController', 'type' => 1),
             array ('name' => 'Brand Manager', 'class' => 'Aseagle\Bundle\AdminBundle\Controller\BrandController', 'type' => 1),
             array ('name' => 'Order Manager', 'class' => 'Aseagle\Bundle\AdminBundle\Controller\OrderController', 'type' => 1),
-            array ('name' => 'Setting Manager', 'class' => 'Aseagle\Bundle\AdminBundle\Controller\SetttingController', 'type' => 1),
+            array ('name' => 'Setting Manager', 'class' => 'Aseagle\Bundle\AdminBundle\Controller\SettingController', 'type' => 1),
             array ('name' => 'Banner Manager', 'class' => 'Aseagle\Bundle\AdminBundle\Controller\BannerController', 'type' => 1),
         );
 

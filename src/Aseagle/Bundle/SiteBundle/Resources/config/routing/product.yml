@@ -1,0 +1,11 @@
+aseagle_site_product_detail:
+    path:   /detail/{productId}-{productAlias}
+    defaults: { _controller: AseagleSiteBundle:Product:detail }
+
+aseagle_site_product_list:
+    path:   /
+    defaults: { _controller: AseagleSiteBundle:Product:list }
+
+aseagle_site_product_list_bycategory:
+    path:   /{catId}-{catAlias}
+    defaults: { _controller: AseagleSiteBundle:Product:listByCategory }

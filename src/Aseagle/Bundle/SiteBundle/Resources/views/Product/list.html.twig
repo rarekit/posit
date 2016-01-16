@@ -1,28 +1,31 @@
 {% extends "AseagleSiteBundle::layout.html.twig" %}
 {% block bodycls %}class="product"{% endblock %}
 {% block body %}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-3">
-                    {{ render(controller('AseagleSiteBundle:Product:categories')) }}
-                    {{ render(controller('AseagleSiteBundle:Block:support')) }}
-                </div>
-                <div class="col-md-9">
-                    <div class="row banner">
-                        <div class="col-md-12">
-                            <img src="{{asset('static/images/banner01.jpg')}}" class="img-responsive"/> 
-                        </div>
+    <div class="container page">
+        <div class="row carousel-holder"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        {{ render(controller('AseagleSiteBundle:Product:categories')) }}
+                        {{ render(controller('AseagleSiteBundle:Block:support')) }}
                     </div>
+                    <div class="col-md-9">
+                        <div class="row banner">
+                            <div class="col-md-12">
+                                <img src="{{ asset('static/images/banner01.jpg') }}" class="img-responsive"/>
+                            </div>
+                        </div>
 
-                    <div class="row">
+                        <div class="row">
 
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="images/image01.jpg" alt="">
-                                <div class="caption green">
-                                    <h4><a href="#">First Product</a>
-                                    </h4>
+                            <div class="col-sm-4 col-lg-4 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="images/image01.jpg" alt="">
+                                    <div class="caption green">
+                                        <h4><a href="#">First Product</a>
+                                        </h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>

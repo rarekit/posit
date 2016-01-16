@@ -3,7 +3,7 @@
 {% block javascript %}
 {{ parent() }}
 {{ elfinder_tinymce_init4('default', {'width':'1024', 'height': '450', 'title':'Files Manager'|trans} ) }}
-{{ tinymce_init() }}
+{{ tinymce4_init() }}
 
 <script type="text/javascript">
 $('.btnSelectImage').on("click",function() {
